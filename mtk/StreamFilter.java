@@ -8,10 +8,10 @@ import java.util.stream.Collectors;
 public class StreamFilter {
     public static void main(String[] args) {
         
-        List<Product> list = new ArrayList<Product>();
+        List<ProductB> list = new ArrayList<ProductB>();
 
         // Without using streams API
-        for(Product product : getProducts()){
+        for(ProductB product : getProducts()){
             if(product.getPrice() > 30000f){
                 list.add(product);
                 System.out.println(product);
@@ -23,7 +23,7 @@ public class StreamFilter {
         System.out.println("***********************************");
 
         //using streams API
-        List<Product> list2 = getProducts()
+        List<ProductB> list2 = getProducts()
                 .stream().filter((products) -> products.getPrice() > 28000f)
                 .collect(Collectors.toList());
 
@@ -32,15 +32,15 @@ public class StreamFilter {
 
     }
 
-    private static List<Product> getProducts() {
+    private static List<ProductB> getProducts() {
 
-        List<Product> productsList = new ArrayList<Product>();
+        List<ProductB> productsList = new ArrayList<ProductB>();
         // Adding Products
-        productsList.add(new Product(1, "HP Laptop", 25000f));
-        productsList.add(new Product(2, "Dell Laptop", 30000f));
-        productsList.add(new Product(3, "Lenevo Laptop", 28000f));
-        productsList.add(new Product(4, "Sony Laptop", 28000f));
-        productsList.add(new Product(5, "Apple Laptop", 90000f));
+        productsList.add(new ProductB(1, "HP Laptop", 25000f));
+        productsList.add(new ProductB(2, "Dell Laptop", 30000f));
+        productsList.add(new ProductB(3, "Lenevo Laptop", 28000f));
+        productsList.add(new ProductB(4, "Sony Laptop", 28000f));
+        productsList.add(new ProductB(5, "Apple Laptop", 90000f));
 
         return productsList;
     }
@@ -48,15 +48,18 @@ public class StreamFilter {
 }
 
 
-class Product{
+class ProductB{
     private int id;
     private String name;
     private float price;
 
-    public Product(int id, String name, float price) {
+    public ProductB(int id, String name, float price) {
         this.id = id;
         this.name = name;
         this.price = price;
+    }
+    public ProductB(String string, String string2) {
+        //TODO Auto-generated constructor stub
     }
     public int getId() {
         return id;

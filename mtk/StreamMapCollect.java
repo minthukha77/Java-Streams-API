@@ -50,6 +50,8 @@ public class StreamMapCollect {
         userDTOs.forEach(System.out::println);
             
         
+
+        
         
 
     }

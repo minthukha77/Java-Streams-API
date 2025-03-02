@@ -1,0 +1,15 @@
+
+
+                How Stream Works?
+
+
+Source => Filter => Sort => Map => Collect 
+
+
+
+Map and Collect Example
+
+    Stream().map()
+
+
+    User -----------------> UserDTO
